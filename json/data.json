@@ -1,13 +1,5 @@
-[
-	{
-	   "birthday": "01/01/2001",
-	   "first_name": "Lina",
-	   "last_name": "Daho"
-	},
-
-	{
-		"birthday": "01/01/2004",
-	   "first_name": "Sarah",
-	   "last_name": "Daho"
-	}	
-]
+{
+	{name: "lina",  birthday: "01/01/2001", city: "Sterling",   state: "VA"},
+	{name: "Sarah", birthday: "01/01/2004", city: "Ashburn",    state: "VA"},
+	{name: "Razan", birthday: "01/01/2015", city: "Woodbridge", state: "VA"}
+}
