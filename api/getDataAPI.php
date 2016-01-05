@@ -1,7 +1,7 @@
 <?php
 /*
  * Daho Mohamed
- * Get followers count fom FB & Twitter.
+ * Get Data with json_encode 
  */
 // check submitted data
 $name1 = (!empty($_REQUEST['name1']))?$_REQUEST['name1']:'';
