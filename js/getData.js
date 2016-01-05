@@ -24,12 +24,12 @@
 				$.ajax({
 				  url: 'api/getDataAPI.php',
 				  dataType: 'json',
-				  data: {'val1':'lina','val2':'sarah'},
+				  data: {'name1':'Lina','name2':'Sarah','name3':'Razan'},
 				  success: function(response) { 
 				  // success
 					$('#divResults').empty();
 					$.each(response, function(i,item){
-						// log json objects
+						// Console log json objects
 						console.log(item);
 						outputResults.append('<hr><li>'+item.name);
 						outputResults.append('<li>'+item.city + ' ' + item.state);

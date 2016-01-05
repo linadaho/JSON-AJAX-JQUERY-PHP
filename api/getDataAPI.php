@@ -4,13 +4,14 @@
  * Get followers count fom FB & Twitter.
  */
 // check submitted data
-$val1 = (!empty($_REQUEST['val1']))?$_REQUEST['val1']:'';
-$val2 = (!empty($_REQUEST['val2']))?$_REQUEST['val2']:'';
+$name1 = (!empty($_REQUEST['name1']))?$_REQUEST['name1']:'';
+$name2 = (!empty($_REQUEST['name2']))?$_REQUEST['name2']:'';
+$name3 = (!empty($_REQUEST['name3']))?$_REQUEST['name3']:'';
 
 // Combine data into 1 multidimensional table
-$lina  = array('name'=>'lina',  'birthday'=>'01/01/2001','city'=>'Sterling','state'=>'VA');
-$sarah = array('name'=>'Sarah', 'birthday'=>'01/01/2004','city'=>'Ashburn','state'=>'VA');
-$razan = array('name'=>'Razan', 'birthday'=>'01/01/2015','city'=>'Woodbridge','state'=>'VA');
+$lina  = array('name'=>$name1 ,  'birthday'=>'01/01/2001','city'=>'Sterling','state'=>'VA');
+$sarah = array('name'=>$name2 , 'birthday'=>'01/01/2004','city'=>'Ashburn','state'=>'VA');
+$razan = array('name'=>$name3 , 'birthday'=>'01/01/2015','city'=>'Woodbridge','state'=>'VA');
 
 $data = array(
 		'record1'  => $lina, 
