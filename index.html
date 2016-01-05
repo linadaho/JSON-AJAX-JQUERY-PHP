@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Ajax / Jquery / JSON / PHP samples</title>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/getData.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			family.init();
+		});
+	</script>
+</head>
+
+<body>
+
+<div class="contentblock">
+<textarea id="tarea">
+(function($){
+	
+    family = {
+		
+        settings: {
+			ajaxImage: 'loading.gif'
+        },
+
+        init: function() {
+			// events
+			$('button').on('click', function(e) {
+				e.preventDefault();
+				eval('family.runFunction["'+$(this).attr("id")+'"]();');
+			});
+        },
+
+        runFunction: {
+			// get JSON data 
+            "getData": function() {
+				var outputResults = $("#divResults"); 
+				console.log('running getFacebookData...');
+				outputResults.html('<img src="img/loading.gif" />');
+				$.ajax({
+				  url: 'api/getDataAPI.php',
+				  dataType: 'json',
+				  data: {'val1':'lina','val2':'sarah'},
+				  success: function(response) { 
+				  // success
+					$('#divResults').empty();
+					$.each(response, function(i,item){
+						// log json objects
+						console.log(item);
+						outputResults.append('<hr><li>'+item.name);
+						outputResults.append('<li>'+item.city + ' ' + item.state);
+						outputResults.append('<li>'+item.birthday);
+					});
+				  },
+				  error: function(e) { 
+				  // error
+					 alert('error');
+					$('#divResults').html(e.message);
+				  }
+				});
+            },
+
+        }
+
+    }
+
+})(jQuery);
+</textarea>
+
+			<p><button id="getData"> Run - getData / PHP API</button></p>
+			<div id="divResults"></div>
+		</div>
+
+</body>
+</html>
